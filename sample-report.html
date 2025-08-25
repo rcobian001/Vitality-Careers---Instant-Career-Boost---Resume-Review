@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Resume Review - Instant Career Boost</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .sample-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Main Content */
+        .content {
+            background: white;
+            margin: 30px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        /* Alert Box */
+        .alert {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .alert-icon {
+            font-size: 1.5rem;
+        }
+
+        .alert h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Email Header */
+        .email-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .email-subject {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .email-greeting {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Before/After Content */
+        .comparison-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .before-after {
+            margin: 15px 0;
+        }
+
+        .original {
+            background: #ffe6e6;
+            border-left: 4px solid #e74c3c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .improved {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .original .label {
+            color: #c0392b;
+        }
+
+        .improved .label {
+            color: #27ae60;
+        }
+
+        /* Best Practices */
+        .best-practices {
+            background: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .best-practices h4 {
+            color: #2980b9;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .best-practices p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Skills Lists */
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .skills-list h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skills-list ul {
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: #ecf0f1;
+            padding: 8px 15px;
+            margin: 5px 0;
+            border-radius: 20px;
+            color: #555;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.6);
+        }
+
+        .price-highlight {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f39c12;
+            margin: 20px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .skills-section { grid-template-columns: 1fr; }
+            .section { padding: 25px; }
+            .cta-section { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="sample-badge">📋 SAMPLE REPORT</div>
+            <h1>See Exactly What You'll Receive</h1>
+            <p class="subtitle">This is a real example of our comprehensive resume review service. Your personalized report will follow this exact format with your specific resume content.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <!-- Email Header Section -->
+            <div class="section">
+                <div class="email-header">
+                    <div class="email-subject">Vitality Careers - Your Resume Review is Ready</div>
+                    <div class="alert">
+                        <span class="alert-icon">❗</span>
+                        <div>
+                            <h3>High Importance</h3>
+                            <p>Your complete resume optimization report</p>
+                        </div>
+                    </div>
+                    <div class="email-greeting">
+                        <strong>Hi Sample,</strong>
+                        <p>Your resume has been thoroughly reviewed and professionally enhanced to best position you for opportunities as a <strong>Retail Sales Manager</strong>. The report below is designed to provide actionable guidance for branding, ATS alignment, and maximizing your visibility to recruiters—helping you confidently stand out in a competitive talent market.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Practices Section -->
+            <div class="section">
+                <h2 class="section-title">📊 Resume Optimization & Job Search Best Practices</h2>
+                
+                <div class="best-practices">
+                    <h4>The Value of a Targeted Headline</h4>
+                    <p>A tailored resume headline immediately communicates your expertise and professional goal, ensuring recruiters instantly recognize your fit for a <strong>Retail Sales Manager</strong> position. This "billboard statement" should reflect both your experience and your intent.</p>
+                </div>
+
+                <div class="best-practices">
+                    <h4>The Importance of a Strong Branding Summary</h4>
+                    <p>Your summary acts as a quick personal commercial, offering a snapshot of your background, accomplishments, and what you offer an employer. It should be specific, impact-focused, and tailored to retail leadership—demonstrating your unique value beyond a list of duties.</p>
+                </div>
+
+                <div class="best-practices">
+                    <h4>Customized & Targeted Skills for ATS and Recruiters</h4>
+                    <p>Incorporating keywords from target job postings strengthens your visibility in Applicant Tracking Systems (ATS) and signals clear alignment with employer needs. Skills should be specific to retail management and customer service leadership.</p>
+                </div>
+
+                <div class="best-practices">
+                    <h4>Crafting Strong, Impactful Experience Bullets</h4>
+                    <p>The strongest resume bullets use <strong>active verbs</strong>, specify the <strong>scope of responsibility</strong>, and—wherever possible—express impact via quantifiable results (e.g., "[XX]% sales increase," "[XX] team members supervised"). Replace general tasks with measurable outcomes for maximum impact.</p>
+                </div>
+            </div>
+
+            <!-- Before & After Analysis -->
+            <div class="section">
+                <h2 class="section-title">🔄 Before & After Content Analysis</h2>
+                
+                <div class="comparison-item">
+                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Targeted Headline</h3>
+                    <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; border-left: 5px solid #3498db;">
+                        <strong>Retail Sales Manager | Customer-Focused Team Leader Driving Revenue Growth & Operational Excellence</strong>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Branding Summary: Before & After</h3>
+                    
+                    <div class="before-after">
+                        <div class="original">
+                            <div class="label">🔴 ORIGINAL:</div>
+                            <p>Over 15 years of Customer Service combined in Retail, Hospitality, Car Rental, and Timeshares. Experienced in Microsoft Office including Word, Outlook, and general computer programs. Strong leaderships skills with 10 years experience as a manager. Communication, training, team building, and I am able to establish with vendors, customers, and employees.</p>
+                        </div>
+                        <div class="improved">
+                            <div class="label">🟢 IMPROVED:</div>
+                            <p>Experienced customer service professional with 15+ years spanning retail, hospitality, and car rental sectors, including 10 years in supervisory and management roles. Recognized for delivering results in fast-paced environments, developing high-performing teams, and driving store sales growth. Proficient in Microsoft Office, inventory management, staff scheduling, and vendor relations. Adept at building rapport with customers, streamlining operations, and fostering a collaborative work culture—now eager to leverage these skills into a Retail Sales Manager role.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Role-Specific Bullet Review -->
+            <div class="section">
+                <h2 class="section-title">✨ Role-Specific Bullet Review & Optimization</h2>
+                
+                <div class="comparison-item">
+                    <div class="job-title">Racetrac – Shift Manager (2014–Current)</div>
+                    
+                    <div class="before-after">
+                        <div class="original">
+                            <div class="label">🔴 ORIGINAL:</div>
+                            <p>Manage in overseeing the operations and sales of high volume convenience store retail outlet. I work with store management to provide associates with necessary supervision and leadership on designated shifts.</p>
+                        </div>
+                        <div class="improved">
+                            <div class="label">🟢 IMPROVED:</div>
+                            <p>Oversaw daily operations and sales performance of a high-volume convenience store generating $[XX] in annual revenue; supervised, coached, and motivated a team of [XX] associates per shift to ensure outstanding customer service and achievement of store targets.</p>
+                        </div>
+                    </div>
+
+                    <div class="before-after">
+                        <div class="original">
+                            <div class="label">🔴 ORIGINAL:</div>
+                            <p>The position also requires that I stock the floor, inventory/orders, Lottery, vendor checkins, invoicing, and post bills.</p>
+                        </div>
+                        <div class="improved">
+                            <div class="label">🟢 IMPROVED:</div>
+                            <p>Managed inventory control, floor stocking, vendor check-ins, lottery operations, invoicing, and billing—helping reduce shrinkage by [XX]% and maintain optimal product availability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Resume Section -->
+            <div class="section">
+                <h2 class="section-title">📄 Complete Rebuilt Resume</h2>
+                <p style="margin-bottom: 30px; color: #7f8c8d; font-size: 1.1rem;">Below is your optimized resume with all recommendations applied, ready to use:</p>
+                
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 12px; border: 2px solid #e9ecef;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="color: #2c3e50; font-size: 1.8rem;">Retail Sales Leader | Customer Experience Champion | Team Development & Operations Management</h3>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 style="color: #2980b9; margin-bottom: 10px;">Professional Summary</h4>
+                        <p>Experienced retail professional with 15+ years of proven expertise in high-volume customer service environments, including 10 years in supervisory and management roles. Excels in sales leadership, team training, inventory management and optimizing store operations to drive revenue growth and customer loyalty. Adept at fostering collaborative teams, implementing merchandising strategies, and managing vendor relationships. Proficient in Microsoft Office Suite, committed to delivering results in fast-paced retail and service sectors.</p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h4 style="color: #2980b9; margin-bottom: 10px;">Core Competencies</h4>
+                        <ul style="columns: 2; column-gap: 30px; list-style: none;">
+                            <li>• Retail Sales Management</li>
+                            <li>• Customer Experience & Retention</li>
+                            <li>• Team Leadership & Training</li>
+                            <li>• Sales Forecasting & Performance Metrics</li>
+                            <li>• Staff Scheduling & Payroll</li>
+                            <li>• Inventory & Vendor Management</li>
+                            <li>• Store Merchandising</li>
+                            <li>• Conflict Resolution</li>
+                            <li>• Process Improvement</li>
+                            <li>• Microsoft Office Suite (Word, Outlook)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 style="color: #2980b9; margin-bottom: 15px;">Professional Experience</h4>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h5 style="color: #2c3e50;"><strong>RaceTrac – Shift Manager</strong> (2014–Present) [City, State]</h5>
+                            <ul style="margin-left: 20px; color: #555;">
+                                <li>Oversaw operations of a high-volume convenience retail outlet, leading a team of [XX] associates per shift to achieve sales and operational goals.</li>
+                                <li>Provided daily hands-on supervision, staff scheduling, and coaching, resulting in improved morale and a [XX]% increase in productivity.</li>
+                                <li>Managed floor merchandising, inventory/orders, lottery management, vendor check-in, invoicing, and bill posting with [XX]% accuracy.</li>
+                                <li>Processed payroll and collaborated with management on employee time-tracking and compliance, supporting efficient staffing allocation.</li>
+                                <li>Implemented process improvements that reduced operational errors by [XX]% and improved customer satisfaction ratings.</li>
+                            </ul>
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <h5 style="color: #2c3e50;"><strong>Macy's – Sales Associate/Special Projects Lead</strong> (2000–2012) [City, State]</h5>
+                            <ul style="margin-left: 20px; color: #555;">
+                                <li>Designed and executed window displays for seasonal promotions, resulting in an [XX]% increase in store foot traffic and product visibility.</li>
+                                <li>Consistently exceeded personal sales targets and Star Rewards targets, generating $[XX] in additional quarterly revenue.</li>
+                                <li>Provided outstanding customer service by promptly engaging customers, efficiently processing returns, and offering expert product recommendations.</li>
+                                <li>Promoted Macy's charge account enrollments, boosting store loyalty program participation by [XX]% annually.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATS Skills Section -->
+            <div class="section">
+                <h2 class="section-title">🎯 ATS Skills Suggestions</h2>
+                
+                <div class="skills-section">
+                    <div class="skills-list">
+                        <h4>Currently in Resume</h4>
+                        <ul>
+                            <li>Customer Service</li>
+                            <li>Team Leadership</li>
+                            <li>Microsoft Office (Word, Outlook)</li>
+                            <li>Sales</li>
+                            <li>Inventory/Ordering</li>
+                            <li>Vendor Relations</li>
+                            <li>Payroll Assistance</li>
+                        </ul>
+                    </div>
+                    <div class="skills-list">
+                        <h4>Additional Skills to Add</h4>
+                        <ul>
+                            <li>Retail Operations Management</li>
+                            <li>Staff Scheduling</li>
+                            <li>Sales Target Achievement</li>
+                            <li>Loss Prevention</li>
+                            <li>Budgeting & Cost Control</li>
+                            <li>Training & Onboarding</li>
+                            <li>Merchandising</li>
+                            <li>Process Improvement</li>
+                            <li>Performance Coaching</li>
+                            <li>Point of Sale (POS) Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Templates -->
+            <div class="section">
+                <h2 class="section-title">📄 3 Professional Templates Included</h2>
+                <p style="margin-bottom: 20px; color: #7f8c8d;">Three modern, ATS-friendly designs crafted by resume experts. Clean typography, smart sectioning, and easy editing so you can implement improvements in minutes—and look sharp doing it.</p>
+                <div style="background: #e8f4f8; padding: 20px; border-radius: 8px; text-align: center;">
+                    <strong>✅ Template files included in your delivery package</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready for YOUR Personalized Report?</h2>
+            <p>Get this same comprehensive analysis for your resume in just minutes</p>
+            <div class="price-highlight">
+                <span style="text-decoration: line-through; color: #bdc3c7; font-size: 2rem; margin-right: 20px;">$297</span>
+                <span style="color: #f39c12;">$99</span>
+            </div>
+            <a href="https://vitalitycareers.com/investment/ols/products/resume-review" class="cta-button">Get My Resume Report Now</a>
+            <p style="margin-top: 30px; opacity: 0.8; font-size: 0.9rem;">
+                <a href="https://vitalitycareers.com/terms-and-conditions" style="color: white; text-decoration: underline;">Terms and Conditions</a> • 
+                Delivered instantly via email
+            </p>
+        </div>
+    </div>
+</body>
+</html>
