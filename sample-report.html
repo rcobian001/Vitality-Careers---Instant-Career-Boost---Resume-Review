@@ -1,909 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Resume Review - Transform Your Career | Vitality Careers</title>
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --accent-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            --success-gradient: linear-gradient(135deg, #00c851 0%, #00a943 100%);
-            --warning-gradient: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
-            --dark: #2c3e50;
-            --light-gray: #f8f9fa;
-            --medium-gray: #6c757d;
-            --border-color: #e9ecef;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
-            --shadow-hover: 0 20px 50px rgba(0,0,0,0.15);
-            --border-radius: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.7;
-            background: var(--primary-gradient);
-            min-height: 100vh;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.3) 0%, transparent 50%);
-            z-index: -1;
-            animation: backgroundShift 20s ease-in-out infinite;
-        }
-
-        @keyframes backgroundShift {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        @keyframes slideInLeft {
-            from { 
-                opacity: 0; 
-                transform: translateX(-50px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateX(0); 
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        .header {
-            background: rgba(255,255,255,0.98);
-            backdrop-filter: blur(20px);
-            padding: 30px 0;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        .sample-badge {
-            background: var(--accent-gradient);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-block;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
-            transform: translateY(0);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sample-badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .sample-badge:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
-        }
-
-        .sample-badge:hover::before {
-            left: 100%;
-        }
-
-        .header h1 {
-            color: var(--dark);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            color: var(--medium-gray);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 25px;
-            font-weight: 400;
-        }
-
-        /* Main Content */
-        .content {
-            background: white;
-            margin: 50px 0;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            position: relative;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .section {
-            padding: 50px;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .section:hover {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 4px solid transparent;
-            background: linear-gradient(white, white) padding-box,
-                       var(--primary-gradient) border-box;
-            border-image: var(--primary-gradient) 1;
-            display: inline-block;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 4px;
-            background: var(--accent-gradient);
-            transition: width 0.5s ease;
-        }
-
-        .section:hover .section-title::after {
-            width: 100%;
-        }
-
-        /* Alert Box */
-        .alert {
-            background: var(--accent-gradient);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.2);
-            position: relative;
-            overflow: hidden;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .alert::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            transform: translateX(-100%);
-            animation: alertShine 3s infinite;
-        }
-
-        @keyframes alertShine {
-            0% { transform: translateX(-100%); }
-            50%, 100% { transform: translateX(100%); }
-        }
-
-        .alert-icon {
-            font-size: 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        .alert h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        /* Email Header */
-        .email-header {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 30px;
-            border-left: 6px solid var(--primary-gradient);
-            margin-bottom: 35px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .email-header:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .email-subject {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .email-greeting {
-            color: #555;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .email-greeting strong {
-            color: var(--dark);
-        }
-
-        /* Before/After Content */
-        .comparison-item {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 25px 0;
-            border-left: 6px solid var(--primary-gradient);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .comparison-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, transparent 100%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .comparison-item:hover::before {
-            opacity: 1;
-        }
-
-        .comparison-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-        }
-
-        .job-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .before-after {
-            margin: 20px 0;
-        }
-
-        .original, .improved {
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .original {
-            background: linear-gradient(135deg, #ffe6e6 0%, #fff0f0 100%);
-            border-left: 5px solid #e74c3c;
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.1);
-        }
-
-        .improved {
-            background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
-            border-left: 5px solid #27ae60;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.1);
-        }
-
-        .original:hover, .improved:hover {
-            transform: translateX(5px);
-        }
-
-        .label {
-            font-weight: 800;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .original .label {
-            color: #c0392b;
-        }
-
-        .improved .label {
-            color: #27ae60;
-        }
-
-        /* Best Practices */
-        .best-practices {
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
-            border-left: 6px solid #3498db;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 25px 0;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .best-practices::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.05));
-            transform: translateX(100%);
-            transition: var(--transition);
-        }
-
-        .best-practices:hover::before {
-            transform: translateX(0);
-        }
-
-        .best-practices:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.15);
-        }
-
-        .best-practices h4 {
-            color: #2980b9;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .best-practices p {
-            margin-bottom: 15px;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* Skills Lists */
-        .skills-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .skills-list {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .skills-list:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-        }
-
-        .skills-list h4 {
-            color: var(--dark);
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .skills-list ul {
-            list-style: none;
-        }
-
-        .skills-list li {
-            background: linear-gradient(135deg, #ecf0f1 0%, #ffffff 100%);
-            padding: 12px 20px;
-            margin: 8px 0;
-            border-radius: 25px;
-            color: #555;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .skills-list li:hover {
-            background: var(--primary-gradient);
-            color: white;
-            transform: translateX(5px);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        /* Resume Template */
-        .resume-template {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border: 3px solid var(--border-color);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .resume-template:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-color: rgba(102, 126, 234, 0.3);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 70px 50px;
-            text-align: center;
-            border-radius: var(--border-radius);
-            margin: 50px 0;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: ctaRotate 20s linear infinite;
-        }
-
-        @keyframes ctaRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .cta-section h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            margin-bottom: 25px;
-            font-weight: 900;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-section p {
-            font-size: 1.3rem;
-            margin-bottom: 35px;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent-gradient);
-            color: white;
-            padding: 22px 50px;
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 60px;
-            box-shadow: 0 15px 35px rgba(238, 90, 36, 0.4);
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(238, 90, 36, 0.6);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .price-highlight {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 900;
-            color: #f39c12;
-            margin: 30px 0;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
-            animation: pulse 3s infinite;
-        }
-
-        .price-highlight .old-price {
-            text-decoration: line-through;
-            color: #bdc3c7;
-            font-size: 0.7em;
-            margin-right: 20px;
-        }
-
-        /* Floating Elements */
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-icon:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .floating-icon:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
-        .floating-icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
-            .skills-section { grid-template-columns: 1fr; }
-            .section { padding: 30px 25px; }
-            .cta-section { padding: 50px 30px; }
-            .comparison-item { padding: 25px 20px; }
-            .best-practices { padding: 25px 20px; }
-            .resume-template { padding: 25px 20px; }
-            
-            .original:hover, .improved:hover {
-                transform: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 0 15px; }
-            .section { padding: 25px 20px; }
-            .email-header { padding: 25px 20px; }
-        }
-
-        /* Performance optimizations */
-        .section, .comparison-item, .best-practices, .skills-list {
-            will-change: transform;
-        }
-
-        /* Accessibility improvements */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Resume Report - Instant Career Boost | Vitality Careers</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #8B0000;
+    --blue: #1a3a8B;
+    --green: #2d6a2d;
+    --light-bg: #f9f9f9;
+    --border: #e0e0e0;
+    --text: #222;
+    --muted: #666;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #f4f4f4;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.1; }
+  .nav-logo .vit  { color: var(--red); }
+  .nav-logo .a    { color: var(--blue); }
+  .nav-logo .lity { color: var(--red); }
+  .nav-logo .careers { display: block; font-size: 11px; letter-spacing: 4px; color: var(--green); font-family: 'Source Sans 3', sans-serif; font-weight: 700; }
+  .nav-links { display: flex; gap: 16px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 13px; font-weight: 600; transition: color .2s; }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px !important;
+  }
+  .nav-cta:hover { background: #6b0000 !important; color: #fff !important; }
+
+  /* ── HERO ── */
+  .hero {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 52px 24px 40px;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: #fff4f4;
+    border: 1px solid #f0c0c0;
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    color: var(--text);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .hero p {
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #6b0000; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--red);
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: 2px solid var(--red);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all .2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--red); color: #fff; }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+  }
+
+  /* ── EMAIL SHELL ── */
+  .email-shell {
+    background: #e8e8e8;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  .email-chrome {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chrome-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .chrome-dot.r { background: #ff5f57; }
+  .chrome-dot.y { background: #febc2e; }
+  .chrome-dot.g { background: #28c840; }
+  .email-subject {
+    margin-left: 12px;
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+  }
+  .email-body {
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    padding: 32px 28px;
+  }
+
+  /* ── REPORT HEADER ── */
+  .report-header {
+    background: var(--light-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .logo-display { line-height: 1.15; margin-bottom: 8px; }
+  .logo-display .l-vit  { font-size: 30px; font-weight: 900; color: var(--red); letter-spacing: 2px; font-family: 'Playfair Display', serif; }
+  .logo-display .l-a    { font-size: 30px; font-weight: 900; color: var(--blue); font-family: 'Playfair Display', serif; }
+  .logo-display .l-lity { font-size: 30px; font-weight: 900; color: var(--red); letter-spacing: 2px; font-family: 'Playfair Display', serif; }
+  .logo-display .l-careers { display: block; font-size: 13px; font-weight: 700; color: var(--green); letter-spacing: 5px; text-transform: uppercase; margin-top: 2px; }
+  .report-subtitle { font-size: 11px; color: #999; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 10px; }
+
+  /* ── OVERVIEW BOX ── */
+  .overview-box {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 16px 0 24px;
+  }
+  .overview-box .ov-label { font-size: 11px; color: var(--red); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .overview-box .ov-items { font-size: 13px; color: #555; }
+
+  /* ── GREETING ── */
+  .greeting { margin-bottom: 20px; font-size: 15px; line-height: 1.7; color: #333; }
+  .greeting strong { color: var(--text); }
+
+  /* ── SECTION WRAPPER ── */
+  .section-wrap {
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .section-wrap.s1 { background: #fafafa; }
+  .section-wrap.s2 { background: #f7f7f7; }
+  .section-wrap.s3 { background: #f4f4f4; }
+
+  .section-header {
+    background: var(--red);
+    border-radius: 6px;
+    padding: 9px 16px;
+    margin-bottom: 18px;
+  }
+  .section-header p {
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── RESUME CONTENT ── */
+  .resume-headline {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-family: 'Playfair Display', serif;
+  }
+  .resume-subheadline {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+  .resume-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin: 18px 0 10px;
+  }
+  .chips-wrap { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 4px; }
+  .chip {
+    display: inline-block;
+    background: #f0f4f0;
+    border: 1px solid var(--green);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin: 3px;
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 700;
+  }
+  .job-header { margin: 14px 0 6px; }
+  .job-title { font-weight: 700; font-size: 14px; color: var(--text); }
+  .job-meta { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .job-bullets { padding-left: 18px; margin: 6px 0 0; }
+  .job-bullets li { margin-bottom: 5px; font-size: 13px; line-height: 1.5; color: #333; }
+  .edu-item { font-size: 13px; color: #333; margin-bottom: 5px; }
+  .edu-item strong { color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    margin: 28px 0;
+    color: #ccc;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  /* ── BEFORE/AFTER BOXES ── */
+  .ba-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 16px 0 6px;
+  }
+  .box-original {
+    background: #f5f5f5;
+    border-left: 4px solid #6b7f99;
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-radius: 4px;
+  }
+  .box-original .box-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .box-optimized {
+    background: #f4f7f4;
+    border-left: 4px solid var(--green);
+    padding: 10px 14px;
+    margin: 6px 0;
+    border-radius: 4px;
+  }
+  .box-optimized .box-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .box-original p, .box-optimized p { font-size: 13px; color: #333; line-height: 1.5; margin: 0; }
+  .box-original ul, .box-optimized ul { margin: 4px 0 0; padding-left: 18px; }
+  .box-original ul li, .box-optimized ul li { font-size: 13px; color: #333; line-height: 1.5; margin-bottom: 3px; }
+
+  .role-divider { border: 0; border-top: 1px solid #e0e0e0; margin: 18px 0; }
+
+  /* ── ATS CHIPS ── */
+  .ats-label { font-size: 13px; font-weight: 700; color: var(--text); margin: 14px 0 6px; }
+
+  /* ── BEST PRACTICES ── */
+  .bp-item { margin-bottom: 14px; }
+  .bp-item h4 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .bp-item p { font-size: 13px; color: #444; line-height: 1.55; }
+  .checklist-item { font-size: 13px; color: #333; margin-bottom: 7px; display: flex; gap: 8px; align-items: flex-start; }
+  .checklist-item .ck { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  .job-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .job-link {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: border-color .2s, color .2s;
+  }
+  .job-link:hover { border-color: var(--red); color: var(--red); }
+
+  /* ── FINAL TIP ── */
+  .final-tip {
+    background: #fafafa;
+    border-left: 4px solid var(--red);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #333;
+    margin: 24px 0;
+  }
+
+  /* ── CTA FOOTER ── */
+  .cta-footer {
+    background: var(--light-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 24px;
+    text-align: center;
+    margin-top: 28px;
+  }
+  .cta-footer h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--red); margin-bottom: 8px; }
+  .cta-footer p { font-size: 13px; color: #666; margin-bottom: 18px; }
+  .cta-footer .btn-primary { font-size: 14px; padding: 12px 32px; }
+  .sig { font-size: 13px; color: #666; margin-top: 20px; }
+  .sig a { color: var(--red); text-decoration: none; }
+  .sig a:hover { text-decoration: underline; }
+
+  /* ── PAGE BOTTOM CTA ── */
+  .page-cta {
+    background: var(--red);
+    border-radius: 14px;
+    padding: 40px 32px;
+    text-align: center;
+    color: #fff;
+    margin-top: 40px;
+  }
+  .page-cta h2 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px; }
+  .page-cta p { font-size: 15px; opacity: .85; margin-bottom: 24px; }
+  .price-display { margin-bottom: 20px; }
+  .price-old { font-size: 18px; opacity: .6; text-decoration: line-through; margin-right: 8px; }
+  .price-new { font-size: 40px; font-weight: 900; font-family: 'Playfair Display', serif; }
+  .btn-white {
+    background: #fff;
+    color: var(--red);
+    padding: 14px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-block;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .page-cta .fine { font-size: 12px; opacity: .6; margin-top: 12px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 28px 32px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+  }
+  footer a { color: var(--muted); text-decoration: none; margin: 0 8px; }
+  footer a:hover { color: var(--red); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; margin-bottom: 10px; }
+
+  @media (max-width: 600px) {
+    .email-body { padding: 20px 14px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 26px; }
+  }
+</style>
 </head>
 <body>
-    <!-- Floating Icons -->
-    <div class="floating-icon">💼</div>
-    <div class="floating-icon">📄</div>
-    <div class="floating-icon">⭐</div>
 
-    <div class="header">
-        <div class="container">
-            <div class="sample-badge">📋 SAMPLE REPORT</div>
-            <h1>See Exactly What You'll Receive</h1>
-            <p class="subtitle">This is a real example of our comprehensive resume review service. Your personalized report will follow this exact format with your specific resume content.</p>
-        </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="vit">VIT</span><span class="a">A</span><span class="lity">LITY</span>
+    <span class="careers">CAREERS</span>
+  </div>
+  <div class="nav-links">
+    <a href="https://rcobian001.github.io/Vitality-Careers---Instant-Career-Boost---Resume-Review/">← Back to Main Page</a>
+    <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="nav-cta">Order Now — $99</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📄 Sample Report Preview</div>
+  <h1>See Exactly What You'll Receive</h1>
+  <p>This is a real example of your comprehensive resume review and rewrite. Every report follows this exact professional format — personalized to your background and target role.</p>
+  <div class="hero-btns">
+    <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="btn-primary">Get My Report — $99</a>
+    <a href="https://rcobian001.github.io/Vitality-Careers---Instant-Career-Boost---Resume-Review/" class="btn-secondary">← Back to Home</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="page-wrap">
+
+  <!-- EMAIL SHELL -->
+  <div class="email-shell">
+    <div class="email-chrome">
+      <div class="chrome-dot r"></div>
+      <div class="chrome-dot y"></div>
+      <div class="chrome-dot g"></div>
+      <span class="email-subject">📧 From: info@vitalitycareers.com &nbsp;|&nbsp; Subject: Your Instant Career Boost Resume Report is Ready</span>
     </div>
 
-    <div class="container">
-        <div class="content">
-            <!-- Email Header Section -->
-            <div class="section">
-                <div class="email-header">
-                    <div class="email-subject">Vitality Careers - Your Resume Review is Ready</div>
-                    <div class="alert">
-                        <span class="alert-icon">❗</span>
-                        <div>
-                            <h3>High Importance</h3>
-                            <p>Your complete resume optimization report</p>
-                        </div>
-                    </div>
-                    <div class="email-greeting">
-                        <strong>Hi Sample,</strong>
-                        <p>Your resume has been thoroughly reviewed and professionally enhanced to best position you for opportunities as a <strong>Retail Sales Manager</strong>. The report below is designed to provide actionable guidance for branding, ATS alignment, and maximizing your visibility to recruiters—helping you confidently stand out in a competitive talent market.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="email-body">
 
-            <!-- Best Practices Section -->
-            <div class="section">
-                <h2 class="section-title">📊 Resume Optimization & Job Search Best Practices</h2>
-                
-                <div class="best-practices">
-                    <h4>The Value of a Targeted Headline</h4>
-                    <p>A tailored resume headline immediately communicates your expertise and professional goal, ensuring recruiters instantly recognize your fit for a <strong>Retail Sales Manager</strong> position. This "billboard statement" should reflect both your experience and your intent.</p>
-                </div>
+      <!-- REPORT HEADER -->
+      <div class="report-header">
+        <div class="logo-display">
+          <span class="l-vit">VIT</span><span class="l-a">A</span><span class="l-lity">LITY</span>
+          <span class="l-careers">Careers</span>
+        </div>
+        <div class="report-subtitle">Professional Resume Review &amp; Career Strategy Report</div>
+      </div>
 
-                <div class="best-practices">
-                    <h4>The Importance of a Strong Branding Summary</h4>
-                    <p>Your summary acts as a quick personal commercial, offering a snapshot of your background, accomplishments, and what you offer an employer. It should be specific, impact-focused, and tailored to retail leadership—demonstrating your unique value beyond a list of duties.</p>
-                </div>
+      <!-- GREETING -->
+      <div class="greeting">
+        <p>Hi <strong>Alex,</strong></p>
+        <br>
+        <p>Your background in retail leadership and customer service reflects exactly the kind of hands-on experience employers are looking for. This report has been professionally crafted to help you compete confidently and land the role you deserve. Your resume has been thoroughly reviewed and optimized to better position you for opportunities as a <strong>Retail Sales Manager</strong>. Below you will find your fully optimized resume, a detailed before-and-after analysis, and strategic best practices to strengthen your job search.</p>
+      </div>
 
-                <div class="best-practices">
-                    <h4>Customized & Targeted Skills for ATS and Recruiters</h4>
-                    <p>Incorporating keywords from target job postings strengthens your visibility in Applicant Tracking Systems (ATS) and signals clear alignment with employer needs. Skills should be specific to retail management and customer service leadership.</p>
-                </div>
+      <!-- OVERVIEW BOX -->
+      <div class="overview-box">
+        <div class="ov-label">Report Overview</div>
+        <div class="ov-items">This report includes: <strong>Optimized Resume</strong> &nbsp;·&nbsp; <strong>Before &amp; After Analysis</strong> &nbsp;·&nbsp; <strong>Best Practices Guide</strong> &nbsp;·&nbsp; <strong>Job Search Resources</strong></div>
+      </div>
 
-                <div class="best-practices">
-                    <h4>Crafting Strong, Impactful Experience Bullets</h4>
-                    <p>The strongest resume bullets use <strong>active verbs</strong>, specify the <strong>scope of responsibility</strong>, and—wherever possible—express impact via quantifiable results (e.g., "[XX]% sales increase," "[XX] team members supervised"). Replace general tasks with measurable outcomes for maximum impact.</p>
-                </div>
-            </div>
+      <!-- ══════════════════════════════ -->
+      <!-- SECTION 1 -->
+      <!-- ══════════════════════════════ -->
+      <div class="section-wrap s1">
+        <div class="section-header"><p>Section 1: New Optimized Resume</p></div>
 
-            <!-- Before & After Analysis -->
-            <div class="section">
-                <h2 class="section-title">🔄 Before & After Content Analysis</h2>
-                
-                <div class="comparison-item">
-                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Targeted Headline</h3>
-                    <div style="background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); padding: 25px; border-radius: 12px; border-left: 6px solid #3498db; font-weight: 600; font-size: 1.1rem;">
-                        <strong>Retail Sales Manager | Customer-Focused Team Leader Driving Revenue Growth & Operational Excellence</strong>
-                    </div>
-                </div>
+        <div class="resume-headline">Retail Sales Manager | Customer Experience &amp; Team Leadership</div>
+        <div class="resume-subheadline">Driving Revenue Growth Through Operational Excellence &amp; Staff Development</div>
 
-                <div class="comparison-item">
-                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Branding Summary: Before & After</h3>
-                    
-                    <div class="before-after">
-                        <div class="original">
-                            <div class="label">🔴 ORIGINAL:</div>
-                            <p>Over 15 years of Customer Service combined in Retail, Hospitality, Car Rental, and Timeshares. Experienced in Microsoft Office including Word, Outlook, and general computer programs. Strong leaderships skills with 10 years experience as a manager. Communication, training, team building, and I am able to establish with vendors, customers, and employees.</p>
-                        </div>
-                        <div class="improved">
-                            <div class="label">🟢 IMPROVED:</div>
-                            <p>Experienced customer service professional with 15+ years spanning retail, hospitality, and car rental sectors, including 10 years in supervisory and management roles. Recognized for delivering results in fast-paced environments, developing high-performing teams, and driving store sales growth. Proficient in Microsoft Office, inventory management, staff scheduling, and vendor relations. Adept at building rapport with customers, streamlining operations, and fostering a collaborative work culture—now eager to leverage these skills into a Retail Sales Manager role.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="resume-section-title">Branding Summary</div>
+        <p style="font-size:13px;color:#333;line-height:1.6;">Results-driven retail professional with 15+ years of progressive experience in high-volume customer service environments, including 10+ years in supervisory and management roles. Proven ability to lead and develop high-performing teams, optimize store operations, and consistently exceed sales targets. Skilled in inventory management, staff scheduling, vendor relations, and loss prevention. Recognized for building positive customer relationships and fostering collaborative team cultures that drive measurable results.</p>
 
-            <!-- Role-Specific Bullet Review -->
-            <div class="section">
-                <h2 class="section-title">✨ Role-Specific Bullet Review & Optimization</h2>
-                
-                <div class="comparison-item">
-                    <div class="job-title">Racetrac – Shift Manager (2014–Current)</div>
-                    
-                    <div class="before-after">
-                        <div class="original">
-                            <div class="label">🔴 ORIGINAL:</div>
-                            <p>Manage in overseeing the operations and sales of high volume convenience store retail outlet. I work with store management to provide associates with necessary supervision and leadership on designated shifts.</p>
-                        </div>
-                        <div class="improved">
-                            <div class="label">🟢 IMPROVED:</div>
-                            <p>Oversaw daily operations and sales performance of a high-volume convenience store generating $[XX] in annual revenue; supervised, coached, and motivated a team of [XX] associates per shift to ensure outstanding customer service and achievement of store targets.</p>
-                        </div>
-                    </div>
-
-                    <div class="before-after">
-                        <div class="original">
-                            <div class="label">🔴 ORIGINAL:</div>
-                            <p>The position also requires that I stock the floor, inventory/orders, Lottery, vendor checkins, invoicing, and post bills.</p>
-                        </div>
-                        <div class="improved">
-                            <div class="label">🟢 IMPROVED:</div>
-                            <p>Managed inventory control, floor stocking, vendor check-ins, lottery operations, invoicing, and billing—helping reduce shrinkage by [XX]% and maintain optimal product availability.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Complete Resume Section -->
-            <div class="section">
-                <h2 class="section-title">📄 Complete Rebuilt Resume</h2>
-                <p style="margin-bottom: 30px; color: #7f8c8d; font-size: 1.2rem;">Below is your optimized resume with all recommendations applied, ready to use:</p>
-                
-                <div class="resume-template">
-                    <div style="text-align: center; margin-bottom: 40px;">
-                        <h3 style="color: #2c3e50; font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Retail Sales Leader | Customer Experience Champion</h3>
-                        <p style="color: #667eea; font-size: 1.1rem; font-weight: 600;">Team Development & Operations Management</p>
-                    </div>
-
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: #2980b9; margin-bottom: 15px; font-size: 1.3rem; font-weight: 700;">Professional Summary</h4>
-                        <p style="line-height: 1.8;">Experienced retail professional with 15+ years of proven expertise in high-volume customer service environments, including 10 years in supervisory and management roles. Excels in sales leadership, team training, inventory management and optimizing store operations to drive revenue growth and customer loyalty. Adept at fostering collaborative teams, implementing merchandising strategies, and managing vendor relationships. Proficient in Microsoft Office Suite, committed to delivering results in fast-paced retail and service sectors.</p>
-                    </div>
-
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: #2980b9; margin-bottom: 15px; font-size: 1.3rem; font-weight: 700;">Core Competencies</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                            <div>
-                                <ul style="list-style: none; padding-left: 0;">
-                                    <li>• Retail Sales Management</li>
-                                    <li>• Customer Experience & Retention</li>
-                                    <li>• Team Leadership & Training</li>
-                                    <li>• Sales Forecasting & Performance Metrics</li>
-                                    <li>• Staff Scheduling & Payroll</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul style="list-style: none; padding-left: 0;">
-                                    <li>• Inventory & Vendor Management</li>
-                                    <li>• Store Merchandising</li>
-                                    <li>• Conflict Resolution</li>
-                                    <li>• Process Improvement</li>
-                                    <li>• Microsoft Office Suite (Word, Outlook)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h4 style="color: #2980b9; margin-bottom: 20px; font-size: 1.3rem; font-weight: 700;">Professional Experience</h4>
-                        
-                        <div style="margin-bottom: 25px;">
-                            <h5 style="color: #2c3e50; font-weight: 800; margin-bottom: 10px;"><strong>RaceTrac – Shift Manager</strong> (2014–Present) [City, State]</h5>
-                            <ul style="margin-left: 20px; color: #555; line-height: 1.7;">
-                                <li>Oversaw operations of a high-volume convenience retail outlet, leading a team of [XX] associates per shift to achieve sales and operational goals.</li>
-                                <li>Provided daily hands-on supervision, staff scheduling, and coaching, resulting in improved morale and a [XX]% increase in productivity.</li>
-                                <li>Managed floor merchandising, inventory/orders, lottery management, vendor check-in, invoicing, and bill posting with [XX]% accuracy.</li>
-                                <li>Processed payroll and collaborated with management on employee time-tracking and compliance, supporting efficient staffing allocation.</li>
-                                <li>Implemented process improvements that reduced operational errors by [XX]% and improved customer satisfaction ratings.</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-bottom: 25px;">
-                            <h5 style="color: #2c3e50; font-weight: 800; margin-bottom: 10px;"><strong>Macy's – Sales Associate/Special Projects Lead</strong> (2000–2012) [City, State]</h5>
-                            <ul style="margin-left: 20px; color: #555; line-height: 1.7;">
-                                <li>Designed and executed window displays for seasonal promotions, resulting in an [XX]% increase in store foot traffic and product visibility.</li>
-                                <li>Consistently exceeded personal sales targets and Star Rewards targets, generating $[XX] in additional quarterly revenue.</li>
-                                <li>Provided outstanding customer service by promptly engaging customers, efficiently processing returns, and offering expert product recommendations.</li>
-                                <li>Promoted Macy's charge account enrollments, boosting store loyalty program participation by [XX]% annually.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ATS Skills Section -->
-            <div class="section">
-                <h2 class="section-title">🎯 ATS Skills Suggestions</h2>
-                
-                <div class="skills-section">
-                    <div class="skills-list">
-                        <h4>Currently in Resume</h4>
-                        <ul>
-                            <li>Customer Service</li>
-                            <li>Team Leadership</li>
-                            <li>Microsoft Office (Word, Outlook)</li>
-                            <li>Sales</li>
-                            <li>Inventory/Ordering</li>
-                            <li>Vendor Relations</li>
-                            <li>Payroll Assistance</li>
-                        </ul>
-                    </div>
-                    <div class="skills-list">
-                        <h4>Additional Skills to Add</h4>
-                        <ul>
-                            <li>Retail Operations Management</li>
-                            <li>Staff Scheduling</li>
-                            <li>Sales Target Achievement</li>
-                            <li>Loss Prevention</li>
-                            <li>Budgeting & Cost Control</li>
-                            <li>Training & Onboarding</li>
-                            <li>Merchandising</li>
-                            <li>Process Improvement</li>
-                            <li>Performance Coaching</li>
-                            <li>Point of Sale (POS) Systems</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Templates -->
-            <div class="section">
-                <h2 class="section-title">📄 3 Professional Templates Included</h2>
-                <p style="margin-bottom: 25px; color: #7f8c8d; font-size: 1.2rem;">Three modern, ATS-friendly designs crafted by resume experts. Clean typography, smart sectioning, and easy editing so you can implement improvements in minutes—and look sharp doing it.</p>
-                <div style="background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%); padding: 30px; border-radius: 15px; text-align: center; border: 3px solid #3498db;">
-                    <strong style="font-size: 1.2rem; color: #2980b9;">✅ Template files included in your delivery package</strong>
-                </div>
-            </div>
+        <div class="resume-section-title">Areas of Expertise</div>
+        <div class="chips-wrap">
+          <span class="chip">Retail Sales Management</span>
+          <span class="chip">Customer Experience</span>
+          <span class="chip">Team Leadership &amp; Training</span>
+          <span class="chip">Inventory Management</span>
+          <span class="chip">Staff Scheduling</span>
+          <span class="chip">Vendor Relations</span>
+          <span class="chip">Loss Prevention</span>
+          <span class="chip">Sales Forecasting</span>
+          <span class="chip">Conflict Resolution</span>
+          <span class="chip">Process Improvement</span>
+          <span class="chip">Store Merchandising</span>
+          <span class="chip">Microsoft Office Suite</span>
+          <span class="chip">POS Systems</span>
+          <span class="chip">Performance Coaching</span>
         </div>
 
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Ready for YOUR Personalized Report?</h2>
-            <p>Get this same comprehensive analysis for your resume in just minutes</p>
-            <div class="price-highlight">
-                <span class="old-price">$297</span>
-                <span style="color: #f39c12;">$99</span>
-            </div>
-            <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="cta-button">Get My Resume Report Now</a>
-            <p style="margin-top: 40px; opacity: 0.9; font-size: 1rem; position: relative; z-index: 1;">
-                <a href="https://vitalitycareers.com/terms-and-conditions" style="color: white; text-decoration: underline;">Terms and Conditions</a> • 
-                Delivered instantly via email
-            </p>
+        <div class="resume-section-title">Professional Experience</div>
+
+        <div class="job-header">
+          <div class="job-title">RaceTrac – Shift Manager</div>
+          <div class="job-meta">2014 – Present &nbsp;|&nbsp; [City, State]</div>
         </div>
+        <ul class="job-bullets">
+          <li>Oversaw daily operations of a high-volume convenience retail outlet generating $[XX] in annual revenue; led a team of [XX]+ associates per shift to achieve sales and operational goals.</li>
+          <li>Provided hands-on supervision, staff scheduling, and performance coaching, contributing to a [XX]% improvement in team productivity and morale.</li>
+          <li>Managed floor merchandising, inventory/ordering, lottery operations, vendor check-ins, invoicing, and billing with [XX]% accuracy.</li>
+          <li>Implemented process improvements that reduced operational errors by [XX]% and elevated customer satisfaction scores.</li>
+          <li>Processed payroll and collaborated with management on time-tracking and compliance, supporting efficient staffing allocation.</li>
+        </ul>
+
+        <div class="job-header">
+          <div class="job-title">Macy's – Sales Associate / Special Projects Lead</div>
+          <div class="job-meta">2000 – 2012 &nbsp;|&nbsp; [City, State]</div>
+        </div>
+        <ul class="job-bullets">
+          <li>Designed and executed seasonal window displays that contributed to a [XX]% increase in store foot traffic and product visibility.</li>
+          <li>Consistently exceeded personal sales targets, generating $[XX] in additional quarterly revenue.</li>
+          <li>Delivered outstanding customer service by engaging clients, processing returns efficiently, and providing expert product recommendations.</li>
+          <li>Promoted Macy's charge account enrollments, boosting loyalty program participation by [XX]% annually.</li>
+        </ul>
+
+        <div class="resume-section-title">Education &amp; Certifications</div>
+        <div class="edu-item"><strong>High School Diploma</strong> — [School Name], [City, State]</div>
+        <div class="edu-item"><strong>Retail Management Certificate</strong> — [Institution, if applicable]</div>
+        <div class="edu-item"><strong>Customer Service Excellence Training</strong> — [Provider, if applicable]</div>
+      </div>
+
+      <div class="divider">— — —</div>
+
+      <!-- ══════════════════════════════ -->
+      <!-- SECTION 2 -->
+      <!-- ══════════════════════════════ -->
+      <div class="section-wrap s2">
+        <div class="section-header"><p>Section 2: Before &amp; After Content Analysis</p></div>
+
+        <!-- A) HEADLINE -->
+        <div class="ba-label">A) Headline</div>
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <p>RETAIL MANAGER</p>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <p>Retail Sales Manager | Customer Experience &amp; Team Leadership</p>
+        </div>
+
+        <!-- B) BRANDING SUMMARY -->
+        <div class="ba-label">B) Branding Summary</div>
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <p>Over 15 years of Customer Service combined in Retail, Hospitality, Car Rental, and Timeshares. Experienced in Microsoft Office including Word, Outlook, and general computer programs. Strong leadership skills with 10 years experience as a manager. Communication, training, team building, and I am able to establish with vendors, customers, and employees.</p>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <p>Results-driven retail professional with 15+ years of progressive experience in high-volume customer service environments, including 10+ years in supervisory and management roles. Proven ability to lead and develop high-performing teams, optimize store operations, and consistently exceed sales targets. Skilled in inventory management, staff scheduling, and vendor relations — recognized for building positive customer relationships and fostering collaborative team cultures that drive measurable results.</p>
+        </div>
+
+        <!-- C) ATS SKILLS -->
+        <div class="ba-label">C) ATS Skills</div>
+        <div class="ats-label">Currently in Resume</div>
+        <div class="chips-wrap">
+          <span class="chip">Customer Service</span>
+          <span class="chip">Team Leadership</span>
+          <span class="chip">Microsoft Office</span>
+          <span class="chip">Sales</span>
+          <span class="chip">Inventory / Ordering</span>
+          <span class="chip">Vendor Relations</span>
+          <span class="chip">Payroll Assistance</span>
+        </div>
+        <div class="ats-label" style="margin-top:12px;">Recommended Skills to Add</div>
+        <div class="chips-wrap">
+          <span class="chip">Retail Operations Management</span>
+          <span class="chip">Staff Scheduling</span>
+          <span class="chip">Loss Prevention</span>
+          <span class="chip">Sales Target Achievement</span>
+          <span class="chip">Training &amp; Onboarding</span>
+          <span class="chip">Store Merchandising</span>
+          <span class="chip">Performance Coaching</span>
+          <span class="chip">POS Systems</span>
+          <span class="chip">Process Improvement</span>
+          <span class="chip">Budgeting &amp; Cost Control</span>
+        </div>
+
+        <!-- D) EXPERIENCE BULLETS -->
+        <div class="ba-label">D) Experience Bullets — Before &amp; After</div>
+
+        <p style="margin:10px 0 4px;font-size:13px;"><strong>RaceTrac – Shift Manager</strong><br><span style="font-size:12px;color:#777;">2014 – Present</span></p>
+
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <ul><li>Manage in overseeing the operations and sales of high volume convenience store retail outlet. I work with store management to provide associates with necessary supervision and leadership on designated shifts.</li></ul>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <ul><li>Oversaw daily operations and sales performance of a high-volume convenience retail outlet generating $[XX] in annual revenue; supervised, coached, and motivated a team of [XX]+ associates per shift to ensure outstanding customer service and achievement of store targets.</li></ul>
+        </div>
+
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <ul><li>The position also requires that I stock the floor, inventory/orders, Lottery, vendor checkins, invoicing, and post bills.</li></ul>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <ul><li>Managed inventory control, floor stocking, vendor check-ins, lottery operations, invoicing, and billing — reducing shrinkage by [XX]% and maintaining optimal product availability.</li></ul>
+        </div>
+
+        <hr class="role-divider">
+
+        <p style="margin:10px 0 4px;font-size:13px;"><strong>Macy's – Sales Associate / Special Projects Lead</strong><br><span style="font-size:12px;color:#777;">2000 – 2012</span></p>
+
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <ul><li>Helped customers find products and processed transactions at register.</li></ul>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <ul><li>Delivered outstanding customer service by proactively engaging shoppers, providing expert product recommendations, and processing transactions with accuracy — contributing to a [XX]% increase in customer satisfaction scores.</li></ul>
+        </div>
+
+        <div class="box-original">
+          <div class="box-tag">Original:</div>
+          <ul><li>Did window displays for the store during holidays.</li></ul>
+        </div>
+        <div class="box-optimized">
+          <div class="box-tag">Optimized:</div>
+          <ul><li>Designed and executed seasonal window displays and promotional merchandising, resulting in a [XX]% increase in store foot traffic and elevated product visibility during key sales periods.</li></ul>
+        </div>
+
+        <!-- E) DATES -->
+        <div class="ba-label">E) Date &amp; Location Consistency</div>
+        <p style="font-size:13px;color:#444;line-height:1.55;">Ensure all roles display consistent date formatting (Month YYYY – Month YYYY or Year – Year) and include either a city/state or "Remote" designation. For older roles, approximate dates are acceptable.</p>
+
+        <!-- G) EDUCATION -->
+        <div class="ba-label">G) Education &amp; Additional Sections</div>
+        <p style="font-size:13px;color:#444;line-height:1.55;">Education is well-placed at the end of the resume. If you hold any retail certifications, awards, or professional affiliations, consider adding a <strong>"Select Achievements"</strong> section — limited to 3–6 of the most relevant items — positioned after your experience section.</p>
+
+        <!-- H) HOBBIES -->
+        <div class="ba-label">H) Hobbies &amp; Interests</div>
+        <p style="font-size:13px;color:#444;line-height:1.55;">No hobbies section was observed, which is appropriate for a retail management target. If added, keep it brief and focused on teamwork, community involvement, or leadership-oriented interests.</p>
+
+        <!-- I) GRAMMAR -->
+        <div class="ba-label">I) Grammar &amp; Style Corrections</div>
+        <ul style="padding-left:18px;margin-top:6px;">
+          <li style="font-size:13px;color:#444;margin-bottom:5px;">Use consistent tense: present tense for current roles, past tense for previous positions.</li>
+          <li style="font-size:13px;color:#444;margin-bottom:5px;">Begin every bullet with a strong action verb (Managed, Led, Oversaw, Delivered).</li>
+          <li style="font-size:13px;color:#444;margin-bottom:5px;">Remove first-person language ("I work with," "I am able to") — resumes are written in third-person implied.</li>
+          <li style="font-size:13px;color:#444;margin-bottom:5px;">Standardize punctuation and spacing throughout.</li>
+          <li style="font-size:13px;color:#444;">Replace vague phrases ("strong leadership skills") with specific demonstrated outcomes.</li>
+        </ul>
+      </div>
+
+      <div class="divider">— — —</div>
+
+      <!-- ══════════════════════════════ -->
+      <!-- SECTION 3 -->
+      <!-- ══════════════════════════════ -->
+      <div class="section-wrap s3">
+        <div class="section-header"><p>Section 3: Resume Writing Best Practices &amp; Job Search Support</p></div>
+
+        <!-- A) BEST PRACTICES -->
+        <div class="ba-label">A) Resume Writing Best Practices</div>
+        <div class="bp-item">
+          <h4>The Value of a Targeted Headline</h4>
+          <p>A one-line headline immediately communicates your expertise and role target to both recruiters and ATS systems. It acts as a professional billboard — specific, concise, and aligned to the job you want.</p>
+        </div>
+        <div class="bp-item">
+          <h4>Crafting a Strong Branding Summary</h4>
+          <p>Your summary is your personal commercial. In 3–4 sentences it should convey who you are, what you bring, and the value you deliver — using language that mirrors the job posting.</p>
+        </div>
+        <div class="bp-item">
+          <h4>Writing High-Impact Bullets</h4>
+          <p>Every bullet should follow the formula: <strong>Action Verb + Context + Result.</strong> Quantify wherever possible — numbers instantly make bullets more credible and compelling.</p>
+        </div>
+        <div class="bp-item">
+          <h4>ATS-Optimized Skills</h4>
+          <p>Incorporate keywords directly from job postings into your skills section. This improves your visibility in Applicant Tracking Systems and signals clear alignment with what employers are seeking.</p>
+        </div>
+        <div class="bp-item">
+          <h4>Education &amp; Certifications Formatting</h4>
+          <p>List in reverse chronological order. Include institution name, degree/credential, and completion date. Place at the end of the resume unless you are a recent graduate.</p>
+        </div>
+
+        <!-- B) BRANDING & ATS TIPS -->
+        <div class="ba-label">B) Personal Branding, ATS &amp; Formatting Tips</div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Keep formatting clean — no tables, graphics, or text boxes that can confuse ATS systems</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Use a single consistent font throughout; 10–12pt body text with clear section headers</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Tailor your headline and summary to each job posting for maximum relevance</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Save and submit your resume as a .docx or PDF (confirm the employer's preference)</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Aim for 1–2 pages maximum; prioritize the most recent and relevant 10–15 years</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Include a LinkedIn URL in your contact header — ensure your profile matches your resume</span></div>
+
+        <!-- C) LINKEDIN TIPS -->
+        <div class="ba-label">C) LinkedIn Branding Tips</div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Use a professional headshot — profiles with photos receive significantly more views</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Write your LinkedIn headline to reflect your target role, not just your current title</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Add a custom banner image that reinforces your professional brand</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Request recommendations from former managers or colleagues in retail leadership</span></div>
+        <div class="checklist-item"><span class="ck">✔</span><span>Engage with retail industry content to increase profile visibility and recruiter reach</span></div>
+
+        <!-- D) JOB SEARCH SITES -->
+        <div class="ba-label">D) Top 10 Job Search Sites</div>
+        <div class="job-links">
+          <a href="https://www.linkedin.com/jobs" target="_blank" class="job-link">LinkedIn Jobs</a>
+          <a href="https://www.indeed.com" target="_blank" class="job-link">Indeed</a>
+          <a href="https://www.glassdoor.com" target="_blank" class="job-link">Glassdoor</a>
+          <a href="https://www.ziprecruiter.com" target="_blank" class="job-link">ZipRecruiter</a>
+          <a href="https://www.monster.com" target="_blank" class="job-link">Monster</a>
+          <a href="https://www.simplyhired.com" target="_blank" class="job-link">SimplyHired</a>
+          <a href="https://www.careerbuilder.com" target="_blank" class="job-link">CareerBuilder</a>
+          <a href="https://www.usajobs.gov" target="_blank" class="job-link">USAJobs</a>
+          <a href="https://www.flexjobs.com" target="_blank" class="job-link">FlexJobs</a>
+          <a href="https://www.idealist.org" target="_blank" class="job-link">Idealist</a>
+        </div>
+      </div>
+
+      <!-- FINAL TIP -->
+      <div class="final-tip">
+        <strong>Final Tip:</strong> Before applying to any Retail Sales Manager role, take 10 minutes to customize your headline and branding summary to mirror the exact language in the job posting. This one step alone can dramatically increase your callback rate — and with your level of experience, you deserve to be in that interview room.
+      </div>
+
+      <!-- CTA FOOTER -->
+      <div class="cta-footer">
+        <h3>Ready to Take the Next Step?</h3>
+        <p>Vitality Careers offers full resume rewrites, LinkedIn optimization, and one-on-one career coaching.</p>
+        <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="btn-primary">Visit Vitality Careers</a>
+        <div class="sig" style="margin-top:20px;">
+          <p>Thank you for choosing Vitality Careers. We look forward to supporting you throughout your career journey.</p>
+          <br>
+          <p>Warm regards,<br>
+          <strong>Vitality Careers</strong><br>
+          <a href="mailto:info@vitalitycareers.com">info@vitalitycareers.com</a> &nbsp;|&nbsp;
+          <a href="https://www.vitalitycareers.com" target="_blank">www.vitalitycareers.com</a></p>
+        </div>
+      </div>
+
+    </div><!-- /email-body -->
+  </div><!-- /email-shell -->
+
+  <!-- PAGE BOTTOM CTA -->
+  <div class="page-cta">
+    <h2>Ready for YOUR Personalized Report?</h2>
+    <p>Get this same comprehensive analysis for your resume — tailored to your background and target role.</p>
+    <div class="price-display">
+      <span class="price-old">$297</span>
+      <span class="price-new">$99</span>
     </div>
+    <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="btn-white">Get My Resume Report Now</a>
+    <div class="fine">Delivered instantly via email &nbsp;·&nbsp; <a href="https://vitalitycareers.com/terms-and-conditions" style="color:rgba(255,255,255,0.6);">Terms &amp; Conditions</a></div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <span style="color:var(--red);">VIT</span><span style="color:var(--blue);">A</span><span style="color:var(--red);">LITY</span>
+    <span style="color:var(--green);font-size:12px;letter-spacing:3px;"> CAREERS</span>
+  </div>
+  <p style="margin-bottom:10px;">
+    <a href="mailto:info@vitalitycareers.com">info@vitalitycareers.com</a>
+    <a href="https://www.facebook.com/vitalitycareers/">Facebook</a>
+    <a href="https://vitalitycareers.com/terms-and-conditions">Terms of Service</a>
+  </p>
+  <p>© 2025 Vitality Careers. All rights reserved. Professional resume services that get results.</p>
+</footer>
+
 </body>
 </html>
