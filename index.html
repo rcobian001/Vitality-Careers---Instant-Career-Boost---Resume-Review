@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17530102138"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,54 +8,24 @@
   gtag('js', new Date());
   gtag('config', 'AW-17530102138');
 </script>
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // ═══════════════════════════════════════════════
-  // EMAILJS CONFIGURATION — FILL IN AFTER SETUP
-  // Replace the three values below with yours
-  // ═══════════════════════════════════════════════
-  const EMAILJS_PUBLIC_KEY  = "ISQAcT9sqhwpzXfwV";
-  const EMAILJS_SERVICE_ID  = "service_efvb8z7";
-  const EMAILJS_TEMPLATE_ID = "template_4em5v0c";
-  // ═══════════════════════════════════════════════
-
-  (function(){ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); })();
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instant Career Boost - Resume Rewrite | Vitality Careers</title>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); min-height: 100vh; overflow-x: hidden; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Background shapes */
     .bg-shapes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
     .shape { position: absolute; opacity: 0.1; animation: float 8s ease-in-out infinite; }
     .shape1 { width: 200px; height: 200px; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); border-radius: 50%; top: 10%; left: 5%; }
     .shape2 { width: 150px; height: 150px; background: linear-gradient(45deg, #45b7d1, #96ceb4); border-radius: 30px; top: 60%; right: 10%; animation-delay: 2s; }
     .shape3 { width: 120px; height: 120px; background: linear-gradient(45deg, #feca57, #ff9ff3); border-radius: 50%; top: 30%; right: 5%; animation-delay: 4s; }
     .shape4 { width: 180px; height: 180px; background: linear-gradient(45deg, #54a0ff, #5f27cd); border-radius: 20px; top: 70%; left: 10%; animation-delay: 6s; }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-30px) rotate(180deg); }
-    }
-
-    /* Hero */
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-30px); } }
     .hero { padding: 60px 0 120px; text-align: center; color: white; position: relative; z-index: 2; }
     .logo-container { margin-bottom: 40px; animation: slideInDown 1s ease-out; }
-    .vitality-logo { display: inline-block; background: rgba(255,255,255,0.95); padding: 25px 40px; border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 2px solid rgba(255,255,255,0.3); }
+    .vitality-logo { display: inline-block; background: rgba(255,255,255,0.95); padding: 25px 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
     .logo-text { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; line-height: 0.85; text-align: center; }
     .vitality-word { font-size: 2.8rem; color: #B22222; letter-spacing: 3px; margin-bottom: 8px; }
     .vitality-word .blue-a { color: #4169E1; }
@@ -64,206 +33,83 @@
     .careers-word { color: #228B22; font-size: 2.4rem; letter-spacing: 2px; border-bottom: 5px solid; border-image: linear-gradient(90deg, #228B22, #4169E1) 1; padding-bottom: 3px; }
     .logo-icon { color: #4169E1; font-size: 2.2rem; display: flex; align-items: center; gap: 5px; }
     .hero-content { animation: slideInUp 1s ease-out 0.3s both; }
-    .ai-badge { display: inline-block; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white; padding: 15px 30px; border-radius: 50px; margin-bottom: 30px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(255,107,107,0.3); animation: pulse 2s infinite; border: 2px solid rgba(255,255,255,0.3); }
-    .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 25px; background: linear-gradient(135deg, #fff 0%, #f8f9ff 50%, #e0e7ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-    .hero-subtitle { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-
-    .sample-report-btn { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(15px); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; border: 2px solid rgba(255,255,255,0.3); font-weight: 700; font-size: 1.2rem; margin: 20px; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .ai-badge { display: inline-block; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white; padding: 15px 30px; border-radius: 50px; margin-bottom: 30px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(255,107,107,0.3); animation: pulse 2s infinite; }
+    .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 25px; background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+    .hero-subtitle { font-size: 1.5rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .sample-report-btn { display: inline-block; background: rgba(255,255,255,0.15); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; border: 2px solid rgba(255,255,255,0.3); font-weight: 700; font-size: 1.2rem; margin: 20px; transition: all 0.4s ease; }
     .sample-report-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-5px); }
-
-    .cta-primary { display: inline-block; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff3838 100%); color: white; padding: 22px 50px; font-size: 1.3rem; font-weight: 800; text-decoration: none; border-radius: 60px; box-shadow: 0 15px 40px rgba(238,90,36,0.4); transition: all 0.4s ease; text-transform: uppercase; letter-spacing: 2px; margin: 30px 20px; border: 3px solid rgba(255,255,255,0.2); }
-    .cta-primary:hover { transform: translateY(-8px) scale(1.05); box-shadow: 0 25px 60px rgba(238,90,36,0.6); }
-
-    /* Features */
+    .cta-primary { display: inline-block; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 22px 50px; font-size: 1.3rem; font-weight: 800; text-decoration: none; border-radius: 60px; box-shadow: 0 15px 40px rgba(238,90,36,0.4); transition: all 0.4s ease; text-transform: uppercase; letter-spacing: 2px; margin: 30px 20px; }
+    .cta-primary:hover { transform: translateY(-8px) scale(1.05); }
     .features { padding: 6rem 0; background: white; position: relative; z-index: 1; }
     .features::before { content: ''; position: absolute; top: -100px; left: 0; right: 0; height: 150px; background: white; border-radius: 80px 80px 0 0; z-index: -1; }
     .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: #2d3748; }
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
     .feature-card { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2.5rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; border: 2px solid transparent; position: relative; overflow: hidden; }
-    .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #667eea, #764ba2); opacity: 0; transition: opacity 0.3s ease; z-index: 1; }
-    .feature-card > * { position: relative; z-index: 2; }
-    .feature-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 50px rgba(102,126,234,0.2); border-color: #667eea; }
-    .feature-card:hover::before { opacity: 0.05; }
-    .feature-card:hover .feature-icon { transform: scale(1.2) rotate(5deg); }
-    .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; transition: all 0.3s ease; display: inline-block; }
+    .feature-card:hover { transform: translateY(-8px) scale(1.02); border-color: #667eea; }
+    .feature-icon { font-size: 3rem; margin-bottom: 1.5rem; display: inline-block; }
     .feature-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; color: #2d3748; }
-
-    /* Process */
     .process { padding: 6rem 0; background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); }
     .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
     .step { text-align: center; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
     .step-number { display: inline-block; width: 60px; height: 60px; background: linear-gradient(45deg, #667eea, #764ba2); color: white; border-radius: 50%; line-height: 60px; font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
-
-    /* Sample CTA */
     .sample-cta { padding: 6rem 0; background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; text-align: center; }
     .sample-cta h2 { font-size: 2.5rem; margin-bottom: 1rem; }
     .sample-cta p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
-
-    /* Order */
     .order-section { padding: 6rem 0; background: white; text-align: center; }
     .order-section h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #2d3748; }
     .order-section p { font-size: 1.1rem; margin-bottom: 2rem; color: #4a5568; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-    /* Footer */
     footer { background: #1a202c; color: white; text-align: center; padding: 3rem 0; }
     .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
     .footer-links a { color: #a0aec0; text-decoration: none; transition: color 0.3s ease; }
     .footer-links a:hover { color: white; }
 
-    /* ═══════════════════════════════════
-       EMAIL CAPTURE FORM STYLES
-    ═══════════════════════════════════ */
+    /* Capture Forms */
     .capture-section { background: white; padding: 0 0 4rem; position: relative; z-index: 1; }
     .capture-section-2 { background: white; padding: 4rem 0 0; }
-
-    .capture-box {
-        border-radius: 14px;
-        padding: 40px 32px;
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto;
-    }
+    .capture-box { border-radius: 14px; padding: 40px 32px; text-align: center; max-width: 900px; margin: 0 auto; }
     .capture-box-red { background: linear-gradient(135deg, #fff4f4 0%, #f9f9ff 100%); border: 1px solid #e8d0d0; }
     .capture-box-green { background: linear-gradient(135deg, #f4f7f4 0%, #f9f9f9 100%); border: 1px solid #c8ddc8; }
-
     .capture-badge { display: inline-block; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
     .badge-red { background: #8B0000; }
     .badge-green { background: #228B22; }
-
     .capture-box h3 { font-family: 'Arial Black', Arial, sans-serif; font-size: 28px; font-weight: 900; color: #222; margin-bottom: 10px; line-height: 1.2; }
     .capture-box p { font-size: 15px; color: #666; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
-
     .offer-box { display: inline-block; background: #fff; border: 2px solid #8B0000; border-radius: 8px; padding: 10px 24px; font-size: 16px; font-weight: 700; color: #8B0000; margin: 0 0 20px; }
     .offer-box span { font-size: 13px; font-weight: 400; color: #888; display: block; margin-top: 2px; }
-
-    /* Custom signup form */
     .signup-form { max-width: 420px; margin: 0 auto; }
-    .signup-form input {
-        width: 100%;
-        padding: 14px 18px;
-        border: 2px solid #e0e0e0;
-        border-radius: 10px;
-        font-size: 15px;
-        margin-bottom: 12px;
-        font-family: 'Segoe UI', sans-serif;
-        transition: border-color 0.2s;
-        outline: none;
-    }
+    .signup-form input { width: 100%; padding: 14px 18px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 15px; margin-bottom: 12px; font-family: 'Segoe UI', sans-serif; outline: none; transition: border-color 0.2s; }
     .signup-form input:focus { border-color: #8B0000; }
-    .signup-form button {
-        width: 100%;
-        padding: 16px;
-        background: linear-gradient(135deg, #8B0000, #B22222);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-family: 'Segoe UI', sans-serif;
-        letter-spacing: 0.5px;
-    }
+    .signup-form button { width: 100%; padding: 16px; background: linear-gradient(135deg, #8B0000, #B22222); color: white; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: 'Segoe UI', sans-serif; }
     .signup-form button:hover { background: linear-gradient(135deg, #6b0000, #8B0000); transform: translateY(-1px); }
     .signup-form button:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-
     .form-fine { font-size: 11px; color: #aaa; margin-top: 10px; }
-
     .or-divider { display: flex; align-items: center; gap: 12px; margin: 14px auto; max-width: 420px; }
     .or-divider hr { flex: 1; border: 0; border-top: 1px solid #ddd; }
     .or-divider span { font-size: 12px; color: #aaa; white-space: nowrap; }
+    .order-link { display: inline-block; background: #8B0000; color: #fff; padding: 11px 28px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 14px; }
 
-    .order-link { display: inline-block; background: #8B0000; color: #fff; padding: 11px 28px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 14px; transition: background 0.2s; }
-    .order-link:hover { background: #6b0000; }
-
-    /* ═══════════════════════════════════
-       POPUP / MODAL STYLES
-    ═══════════════════════════════════ */
-    .popup-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.6);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
+    /* Popup */
+    .popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
     .popup-overlay.active { display: flex; }
-
-    .popup {
-        background: white;
-        border-radius: 20px;
-        padding: 40px 36px;
-        max-width: 480px;
-        width: 100%;
-        text-align: center;
-        position: relative;
-        animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    }
-
-    @keyframes popIn {
-        from { opacity: 0; transform: scale(0.7); }
-        to   { opacity: 1; transform: scale(1); }
-    }
-
-    .popup-close {
-        position: absolute;
-        top: 14px; right: 18px;
-        font-size: 22px;
-        cursor: pointer;
-        color: #aaa;
-        line-height: 1;
-        transition: color 0.2s;
-    }
+    .popup { background: white; border-radius: 20px; padding: 40px 36px; max-width: 480px; width: 100%; text-align: center; position: relative; animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 30px 80px rgba(0,0,0,0.3); }
+    @keyframes popIn { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: scale(1); } }
+    .popup-close { position: absolute; top: 14px; right: 18px; font-size: 22px; cursor: pointer; color: #aaa; line-height: 1; background: none; border: none; }
     .popup-close:hover { color: #333; }
-
     .popup-icon { font-size: 3rem; margin-bottom: 12px; }
-
     .popup h2 { font-family: 'Arial Black', Arial, sans-serif; font-size: 24px; color: #222; margin-bottom: 8px; line-height: 1.2; }
-    .popup .popup-sub { font-size: 15px; color: #666; margin-bottom: 20px; }
-
-    .code-box {
-        background: linear-gradient(135deg, #fff4f4, #fff0f0);
-        border: 3px dashed #8B0000;
-        border-radius: 12px;
-        padding: 18px 24px;
-        margin: 0 0 20px;
-    }
+    .popup-sub { font-size: 15px; color: #666; margin-bottom: 20px; }
+    .code-box { background: linear-gradient(135deg, #fff4f4, #fff0f0); border: 3px dashed #8B0000; border-radius: 12px; padding: 18px 24px; margin: 0 0 20px; }
     .code-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #8B0000; text-transform: uppercase; margin-bottom: 6px; }
     .code-value { font-size: 36px; font-weight: 900; color: #8B0000; font-family: 'Arial Black', Arial, sans-serif; letter-spacing: 4px; }
     .code-saving { font-size: 13px; color: #888; margin-top: 4px; }
-
     .popup-note { font-size: 13px; color: #888; margin-bottom: 24px; }
-    .popup-note strong { color: #444; }
-
-    .popup-btn {
-        display: block;
-        width: 100%;
-        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-        color: white;
-        padding: 16px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 800;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.2s;
-        box-shadow: 0 8px 25px rgba(238,90,36,0.35);
-    }
-    .popup-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(238,90,36,0.5); }
-
+    .popup-btn { display: block; width: 100%; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 16px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; box-shadow: 0 8px 25px rgba(238,90,36,0.35); }
+    .popup-btn:hover { transform: translateY(-2px); }
     .popup-email-note { font-size: 12px; color: #aaa; margin-top: 14px; }
 
-    /* Animations */
     @keyframes slideInDown { from { opacity: 0; transform: translateY(-100px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes slideInUp { from { opacity: 0; transform: translateY(100px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-    /* Floating particles */
     .floating-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
     .particle { position: absolute; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite; }
     .particle:nth-child(1) { width: 20px; height: 20px; left: 10%; top: 20%; }
@@ -280,7 +126,6 @@
         .section-title { font-size: 2rem; }
         .vitality-word { font-size: 2rem; }
         .careers-word { font-size: 1.8rem; }
-        .logo-icon { font-size: 1.8rem; }
         .feature-card { padding: 2rem; }
         .container { padding: 0 15px; }
         .popup { padding: 30px 24px; }
@@ -290,29 +135,21 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     DISCOUNT CODE POPUP
-═══════════════════════════════════ -->
+<!-- POPUP -->
 <div class="popup-overlay" id="discountPopup">
     <div class="popup">
-        <span class="popup-close" onclick="closePopup()">✕</span>
-        <div class="popup-icon">🎉</div>
+        <button class="popup-close" onclick="window.closePopup()">&#10005;</button>
+        <div class="popup-icon">&#127881;</div>
         <h2>Your Discount Code Is Ready!</h2>
         <p class="popup-sub">Use this code at checkout to save $25 on your resume report:</p>
-
         <div class="code-box">
             <div class="code-label">Your Exclusive Code</div>
             <div class="code-value">BOOST25</div>
-            <div class="code-saving">Save $25 — Pay just $74 instead of $99</div>
+            <div class="code-saving">Save $25 &mdash; Pay just $74 instead of $99</div>
         </div>
-
-        <p class="popup-note">📧 <strong>We're also sending this code to your inbox</strong> so you'll always have it handy.</p>
-
-        <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="popup-btn" target="_blank">
-            Use My Code Now →
-        </a>
-
-        <p class="popup-email-note">Can't find the email? Check your spam folder and add <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec7c0c8c1eed8c7dacfc2c7dad7cdcfdccbcbdcdd80cdc1c3">[email&#160;protected]</a> to your contacts.</p>
+        <p class="popup-note">&#128231; We are also sending this code to your inbox so you will always have it handy.</p>
+        <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="popup-btn" target="_blank">Use My Code Now &rarr;</a>
+        <p class="popup-email-note">Can't find the email? Check your spam folder and add info@vitalitycareers.com to your contacts.</p>
     </div>
 </div>
 
@@ -324,14 +161,10 @@
     <div class="shape shape4"></div>
 </div>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
     <div class="floating-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div>
     </div>
     <div class="container">
         <div class="logo-container">
@@ -340,152 +173,102 @@
                     <div class="vitality-word">VIT<span class="blue-a">A</span>LITY</div>
                     <div class="careers-section">
                         <div class="careers-word">CAREERS</div>
-                        <div class="logo-icon">🏃‍♂️✨</div>
+                        <div class="logo-icon">&#127939;&#10024;</div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="hero-content">
-            <div class="ai-badge">🤖 AI-Powered • Expert-Engineered</div>
+            <div class="ai-badge">&#129302; AI-Powered &bull; Expert-Engineered</div>
             <h1>Instant Career Boost<br>Resume Rewrite</h1>
-            <p class="hero-subtitle">Advanced AI delivers professional-grade resume optimization that goes way beyond what you can DIY. Get detailed feedback, targeted rewrites, and a complete rebuilt resume—all delivered in minutes.</p>
+            <p class="hero-subtitle">Advanced AI delivers professional-grade resume optimization that goes way beyond what you can DIY. Get detailed feedback, targeted rewrites, and a complete rebuilt resume&mdash;all delivered in minutes.</p>
             <div style="margin: 40px 0;">
-                <a href="sample-report.html" class="sample-report-btn">📄 See Sample Report</a>
+                <a href="sample-report.html" class="sample-report-btn">&#128196; See Sample Report</a>
             </div>
             <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" target="_blank" class="cta-primary">Get Your Resume Rewritten Now</a>
         </div>
     </div>
 </section>
 
-<!-- Features Section -->
+<!-- Features -->
 <section class="features" id="features">
     <div class="container">
         <h2 class="section-title">What You Get</h2>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Professional Analysis</h3>
-                <p>Get a recruiter-smart breakdown of what's working and what's not. Our AI analyzes structure, content, formatting, and ATS compatibility with the precision of a hiring expert.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✏️</div>
-                <h3>Complete Rewrite</h3>
-                <p>Every bullet point gets a professional rewrite. We map targeted keywords to your specific role and deliver high-impact improvements that boost clarity, relevance, and results.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📄</div>
-                <h3>Rebuilt Resume</h3>
-                <p>Your fully optimized resume with all recommendations applied—copy-paste ready. Drop it into our included ATS-friendly templates and you're done.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>Professional Templates</h3>
-                <p>Modern, ATS-friendly designs crafted by resume experts. Clean typography and smart sectioning that makes you look sharp.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Bonus Guide</h3>
-                <p>"Unlock the Unadvertised: 20 Steps to Winning in the Hidden Job Market" - Your playbook for tapping referrals and hidden opportunities.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Instant Delivery</h3>
-                <p>Everything delivered within minutes via email. No waiting, no delays—just instant access to your upgraded career materials.</p>
-            </div>
+            <div class="feature-card"><div class="feature-icon">&#128269;</div><h3>Professional Analysis</h3><p>Get a recruiter-smart breakdown of what's working and what's not. Our AI analyzes structure, content, formatting, and ATS compatibility with the precision of a hiring expert.</p></div>
+            <div class="feature-card"><div class="feature-icon">&#9999;&#65039;</div><h3>Complete Rewrite</h3><p>Every bullet point gets a professional rewrite. We map targeted keywords to your specific role and deliver high-impact improvements that boost clarity, relevance, and results.</p></div>
+            <div class="feature-card"><div class="feature-icon">&#128196;</div><h3>Rebuilt Resume</h3><p>Your fully optimized resume with all recommendations applied&mdash;copy-paste ready. Drop it into our included ATS-friendly templates and you're done.</p></div>
+            <div class="feature-card"><div class="feature-icon">&#127912;</div><h3>Professional Templates</h3><p>Modern, ATS-friendly designs crafted by resume experts. Clean typography and smart sectioning that makes you look sharp.</p></div>
+            <div class="feature-card"><div class="feature-icon">&#128218;</div><h3>Bonus Guide</h3><p>"Unlock the Unadvertised: 20 Steps to Winning in the Hidden Job Market" - Your playbook for tapping referrals and hidden opportunities.</p></div>
+            <div class="feature-card"><div class="feature-icon">&#9889;</div><h3>Instant Delivery</h3><p>Everything delivered within minutes via email. No waiting, no delays&mdash;just instant access to your upgraded career materials.</p></div>
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     EMAIL CAPTURE FORM 1 — After Features
-═══════════════════════════════════ -->
+<!-- Email Capture 1 -->
 <section class="capture-section">
     <div class="container">
         <div class="capture-box capture-box-red">
-            <div class="capture-badge badge-red">🎁 Exclusive Subscriber Offer</div>
+            <div class="capture-badge badge-red">&#127873; Exclusive Subscriber Offer</div>
             <h3>Get $25 Off Your Resume Report</h3>
             <p>Enter your details below and your discount code will appear instantly on screen.</p>
             <div class="offer-box">
-                Save $25 — Pay Just $74
+                Save $25 &mdash; Pay Just $74
                 <span>Discount code appears instantly on screen</span>
             </div>
-            <div class="signup-form">
-                <input type="text" id="name1" placeholder="Your First Name" required>
-                <input type="email" id="email1" placeholder="Your Email Address" required>
-                <button type="button" onclick="handleSignup('name1','email1')">
-                    Send My Discount Code 🎉
-                </button>
+            <div class="signup-form" id="form1">
+                <input type="text" id="name1" placeholder="Your First Name">
+                <input type="email" id="email1" placeholder="Your Email Address">
+                <button type="button" id="btn1">Send My Discount Code &#127881;</button>
                 <p class="form-fine">No spam. Unsubscribe anytime. Discount is for new subscribers only.</p>
             </div>
-            <div class="or-divider">
-                <hr><span>or purchase now at full price</span><hr>
-            </div>
-            <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="order-link">Order Now — $99</a>
+            <div class="or-divider"><hr><span>or purchase now at full price</span><hr></div>
+            <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" class="order-link">Order Now &mdash; $99</a>
         </div>
     </div>
 </section>
 
-<!-- Process Section -->
+<!-- Process -->
 <section class="process" id="process">
     <div class="container">
         <h2 class="section-title">How It Works</h2>
         <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Upload Your Resume</h3>
-                <p>Simply upload your current resume in PDF or Word format</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>AI Analysis</h3>
-                <p>Our advanced AI analyzes every aspect of your resume</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Professional Rewrite</h3>
-                <p>Receive your completely rewritten, optimized resume</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Stand Out from the Competition</h3>
-                <p>Simply copy your optimized content into our included professional design templates and present yourself as the standout candidate</p>
-            </div>
+            <div class="step"><div class="step-number">1</div><h3>Upload Your Resume</h3><p>Simply upload your current resume in PDF or Word format</p></div>
+            <div class="step"><div class="step-number">2</div><h3>AI Analysis</h3><p>Our advanced AI analyzes every aspect of your resume</p></div>
+            <div class="step"><div class="step-number">3</div><h3>Professional Rewrite</h3><p>Receive your completely rewritten, optimized resume</p></div>
+            <div class="step"><div class="step-number">4</div><h3>Stand Out from the Competition</h3><p>Simply copy your optimized content into our included professional design templates and present yourself as the standout candidate</p></div>
         </div>
     </div>
 </section>
 
-<!-- Sample Report Section -->
+<!-- Sample Report CTA -->
 <section class="sample-cta" id="sample-report">
     <div class="container">
         <h2>See Exactly What You'll Receive</h2>
-        <p>No surprises, no guesswork. View our complete sample report to see the professional-grade analysis, detailed feedback, and rebuilt resume you'll receive. Every report follows this exact comprehensive format.</p>
-        <a href="sample-report.html" class="cta-primary" style="margin-right: 1rem;">📄 View Sample Report</a>
+        <p>No surprises, no guesswork. View our complete sample report to see the professional-grade analysis, detailed feedback, and rebuilt resume you'll receive.</p>
+        <a href="sample-report.html" class="cta-primary" style="margin-right: 1rem;">&#128196; View Sample Report</a>
         <a href="https://vitalitycareers.com/investment/ols/products/instant-resume" target="_blank" class="cta-primary">Get Started Now</a>
     </div>
 </section>
 
-<!-- ═══════════════════════════════════
-     EMAIL CAPTURE FORM 2 — Before Order
-═══════════════════════════════════ -->
+<!-- Email Capture 2 -->
 <section class="capture-section-2">
     <div class="container">
         <div class="capture-box capture-box-green">
-            <div class="capture-badge badge-green">💼 Not Ready to Buy Yet?</div>
+            <div class="capture-badge badge-green">&#128188; Not Ready to Buy Yet?</div>
             <h3>Stay Connected &amp; Save</h3>
-            <p>Sign up below and we'll show you your exclusive $25 discount code instantly — save it for whenever you're ready.</p>
-            <div class="signup-form">
-                <input type="text" id="name2" placeholder="Your First Name" required>
-                <input type="email" id="email2" placeholder="Your Email Address" required>
-                <button type="button" onclick="handleSignup('name2','email2')" style="background: linear-gradient(135deg, #228B22, #2d6a2d);">
-                    Show Me My Discount Code 🎉
-                </button>
+            <p>Sign up below and we'll show you your exclusive $25 discount code instantly &mdash; save it for whenever you're ready.</p>
+            <div class="signup-form" id="form2">
+                <input type="text" id="name2" placeholder="Your First Name">
+                <input type="email" id="email2" placeholder="Your Email Address">
+                <button type="button" id="btn2" style="background: linear-gradient(135deg, #228B22, #2d6a2d);">Show Me My Discount Code &#127881;</button>
                 <p class="form-fine">No spam. Unsubscribe anytime. Discount is for new subscribers only.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Order Section -->
+<!-- Order -->
 <section class="order-section" id="order">
     <div class="container">
         <h2>Ready to Transform Your Career?</h2>
@@ -503,9 +286,9 @@
 <footer id="contact">
     <div class="container">
         <div class="footer-links">
-            <a href="/cdn-cgi/l/email-protection#b0d9ded6dff0c6d9c4d1dcd9c4c9d3d1c2d5d5c2c39ed3dfdd">📧 <span class="__cf_email__" data-cfemail="3a53545c557a4c534e5b56534e43595b485f5f484914595557">[email&#160;protected]</span></a>
-            <a href="/cdn-cgi/l/email-protection#741d1a121b34021d0015181d000d171506111106075a171b19">✉️ Contact Me</a>
-            <a href="https://www.facebook.com/vitalitycareers/" target="_blank">📘 Facebook</a>
+            <a href="mailto:info@vitalitycareers.com">&#128231; info@vitalitycareers.com</a>
+            <a href="mailto:info@vitalitycareers.com">&#9993;&#65039; Contact Me</a>
+            <a href="https://www.facebook.com/vitalitycareers/" target="_blank">&#128248; Facebook</a>
             <a href="https://vitalitycareers.com/terms-and-conditions" target="_blank">Terms of Service</a>
         </div>
         <p>&copy; 2025 Vitality Careers. All rights reserved.</p>
@@ -513,70 +296,96 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ═══════════════════════════════════
-    // SIGNUP HANDLER
-    // ═══════════════════════════════════
-    function handleSignup(nameId, emailId) {
-        const name  = document.getElementById(nameId).value.trim();
-        const email = document.getElementById(emailId).value.trim();
+<script>
+    // EmailJS config
+    var EMAILJS_PUBLIC_KEY  = "ISQAcT9sqhwpzXfwV";
+    var EMAILJS_SERVICE_ID  = "service_efvb8z7";
+    var EMAILJS_TEMPLATE_ID = "template_4em5v0c";
 
-        if (!name) { alert('Please enter your first name.'); return; }
-        if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    // Init EmailJS once loaded
+    window.addEventListener('load', function() {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
-        // Disable button to prevent double submit
-        const btn = document.querySelector(`#${emailId}`).closest('.signup-form').querySelector('button');
-        btn.disabled = true;
+        // Attach button listeners
+        document.getElementById('btn1').addEventListener('click', function() {
+            submitForm('name1', 'email1', 'btn1');
+        });
+        document.getElementById('btn2').addEventListener('click', function() {
+            submitForm('name2', 'email2', 'btn2');
+        });
+
+        // Close popup on overlay click
+        document.getElementById('discountPopup').addEventListener('click', function(e) {
+            if (e.target === this) window.closePopup();
+        });
+    });
+
+    function submitForm(nameId, emailId, btnId) {
+        var name  = document.getElementById(nameId).value.trim();
+        var email = document.getElementById(emailId).value.trim();
+        var btn   = document.getElementById(btnId);
+
+        if (!name)  { alert('Please enter your first name.'); return; }
+        if (!email || email.indexOf('@') === -1) { alert('Please enter a valid email address.'); return; }
+
+        btn.disabled    = true;
         btn.textContent = 'Sending...';
 
-        // Send email notification via EmailJS
         emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            to_email: "info@vitalitycareers.com",
+            to_email:         'info@vitalitycareers.com',
             subscriber_name:  name,
             subscriber_email: email,
-            discount_code:    "BOOST25",
+            discount_code:    'BOOST25',
             reply_to:         email
         })
-        .then(() => {
-            showPopup();
-            btn.disabled = false;
-            btn.textContent = 'Send My Discount Code 🎉';
+        .then(function() {
+            window.showPopup();
+            btn.disabled    = false;
+            btn.textContent = 'Send My Discount Code';
         })
-        .catch((error) => {
+        .catch(function(error) {
             console.error('EmailJS error:', error);
-            // Still show popup even if email fails — subscriber gets their code
-            showPopup();
-            btn.disabled = false;
-            btn.textContent = 'Send My Discount Code 🎉';
+            window.showPopup();
+            btn.disabled    = false;
+            btn.textContent = 'Send My Discount Code';
         });
     }
 
-    function showPopup() {
+    window.showPopup = function() {
         document.getElementById('discountPopup').classList.add('active');
         document.body.style.overflow = 'hidden';
-    }
+    };
 
-    function closePopup() {
+    window.closePopup = function() {
         document.getElementById('discountPopup').classList.remove('active');
         document.body.style.overflow = '';
-    }
+    };
 
-    // Close popup if clicking outside
-    document.getElementById('discountPopup').addEventListener('click', function(e) {
-        if (e.target === this) closePopup();
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            var target = document.querySelector(this.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
     // Animate on scroll
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                entry.target.style.op
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card, .step').forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
